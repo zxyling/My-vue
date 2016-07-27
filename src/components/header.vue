@@ -1,11 +1,12 @@
 <template>
     <div class="header">
-        {{msg}}
+
     </div>
 </template>
 <style>
     .header{
-        background-color:#ff0000;
+        height: 30px;
+        background: url("../../image/common/001.png");
     }
 </style>
 <script>
@@ -16,5 +17,5 @@
             }
         }
     }
-    alert(1);
+
 </script>

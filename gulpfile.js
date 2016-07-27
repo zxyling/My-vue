@@ -58,18 +58,18 @@ gulp.task('commonCss',function(){
  * 线上环境 - 公用图片
  * @param 压缩公用代码合并至新目录
  * */
-gulp.task('commonImage',function(){
-    return gulp.src('dist/common/images/**/*.{jpg,png,gif}')
-        .pipe(imagecache(imagemin({             //只压缩修改的图片
-            optimizationLevel: 7,               //类型：Number  默认：3  取值范围：0-7（优化等级）
-            progressive: true,                  //类型：Boolean 默认：false 无损压缩jpg图片
-            interlaced: true,                   //类型：Boolean 默认：false 隔行扫描gif进行渲染
-            multipass: true,                    //类型：Boolean 默认：false 多次优化svg直到完全优化
-            use: [pngquant()]                   //使用pngquant深度压缩png图片的imagemin插件
-        })))
-        .pipe(gulp.dest('dist/images'))
-        .pipe(connect.reload());
-});
+//gulp.task('commonImage',function(){
+//    return gulp.src('src/common/image/**/*.{jpg,png,gif}')
+//        .pipe(imagecache(imagemin({             //只压缩修改的图片
+//            optimizationLevel: 7,               //类型：Number  默认：3  取值范围：0-7（优化等级）
+//            progressive: true,                  //类型：Boolean 默认：false 无损压缩jpg图片
+//            interlaced: true,                   //类型：Boolean 默认：false 隔行扫描gif进行渲染
+//            multipass: true,                    //类型：Boolean 默认：false 多次优化svg直到完全优化
+//            use: [pngquant()]                   //使用pngquant深度压缩png图片的imagemin插件
+//        })))
+//        .pipe(gulp.dest('dist/common/image'))
+//        .pipe(connect.reload());
+//});
 /*
  * 线上环境 - css
  * @param 压缩pages目录下的所有css文件
@@ -93,7 +93,7 @@ gulp.task('images',function(){
             multipass: true,                    //类型：Boolean 默认：false 多次优化svg直到完全优化
             use: [pngquant()]                   //使用pngquant深度压缩png图片的imagemin插件
         })))
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('dist/image'))
         .pipe(connect.reload());
 });
 
@@ -151,7 +151,7 @@ gulp.task('default',['server','watch'],function(){
 
 //一键创建本地目录
 gulp.task('build',function(){
-    run('clean',['clean','copyhtml','libJs','libCss','commonJs','commonCss','commonImage','copyhtml','images','pagesCss','bundle'],function(){
+    run('clean',['clean','copyhtml','libJs','libCss','commonJs','commonCss','copyhtml','images','pagesCss','bundle'],function(){
         setTimeout(function () {
             console.log('\n 线上项目任务已经全部运行完毕 O(∩_∩)O~~');
         }, 100);
@@ -172,9 +172,22 @@ function getConfig(opt) {
                 {
                     test: /\.css$/, // Only .css files
                     loader: 'style!css' // Run both loaders
+                },
+                {
+                    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                    loader: 'url',
+                    query: {
+                        limit: 10000,
+                        name: '../[path][name].[ext]?[hash:07]'
+                    }
                 }
 
             ]
+        },
+        vue:{
+          loaders:{
+              js:'babel-loader?presets[]=es2015'
+          }
         },
         resolve:{
             extensions: ["", ".js", ".vue", ".css", ".json"],
