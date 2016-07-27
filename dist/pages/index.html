@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>首页</title>
     <link rel="stylesheet" href="//g.alicdn.com/sui/sui3/0.0.18/css/sui.css">
 </head>
 <body>
-<myheader :message="msg"></myheader>
+<div id="app">
+    <c-header></c-header>
+    <div class="c-content">
+        <c-left></c-left>
+        <div class="c-right"></div>
+    </div>
+    <c-footer></c-footer>
+</div>
 </body>
 </html>
 <script type="text/javascript" src="//g.alicdn.com/sj/lib/jquery/dist/jquery.js"></script>

@@ -57,22 +57,27 @@
 	
 	var _header2 = _interopRequireDefault(_header);
 	
-	__webpack_require__(10);
+	var _navLeft = __webpack_require__(10);
+	
+	var _navLeft2 = _interopRequireDefault(_navLeft);
+	
+	var _footer = __webpack_require__(15);
+	
+	var _footer2 = _interopRequireDefault(_footer);
+	
+	__webpack_require__(20);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	/**
-	 * Created by zhangxiaoyang on 2016/7/25.
+	 * Created by Administrator on 2016/7/27.
 	 */
 	new Vue({
-	    el: 'body',
+	    el: '#app',
 	    components: {
-	        myheader: _header2.default
-	    },
-	    data: function data() {
-	        return {
-	            msg: "你好，vue"
-	        };
+	        "c-header": _header2.default,
+	        "c-left": _navLeft2.default,
+	        "c-footer": _footer2.default
 	    }
 	});
 
@@ -471,20 +476,49 @@
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __vue_script__, __vue_template__
+	__webpack_require__(11)
+	__vue_script__ = __webpack_require__(13)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\nav-left.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(14)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-24c9f4fa/nav-left.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(11);
+	var content = __webpack_require__(12);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
+	var update = __webpack_require__(7)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./index.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./index.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./nav-left.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./nav-left.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -494,7 +528,7 @@
 	}
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -502,13 +536,199 @@
 	
 	
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n.nav-left{\n    width: 100px;\n    float:left;\n    background: blue;\n    height: 500px;\n}\n", "", {"version":3,"sources":["/./src/components/nav-left.vue?585564bb"],"names":[],"mappings":";;;;;;AAMA;IACA,aAAA;IACA,WAAA;IACA,iBAAA;IACA,cAAA;CACA","file":"nav-left.vue","sourcesContent":["<template>\r\n   <div class=\"nav-left\" :click=\"fn\">\r\n       {{msg}}\r\n   </div>\r\n</template>\r\n<style>\r\n    .nav-left{\r\n        width: 100px;\r\n        float:left;\r\n        background: blue;\r\n        height: 500px;\r\n    }\r\n</style>\r\n<script>\r\n    export default{\r\n        props:{\r\n            msg:String\r\n        },\r\n        methods:{\r\n            fn:function(){\r\n                alert(1);\r\n            }\r\n        }\r\n    }\r\n</script>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 12 */
+/* 13 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//    <div class="nav-left" :click="fn">
+	//        {{msg}}
+	//    </div>
+	// </template>
+	// <style>
+	//     .nav-left{
+	//         width: 100px;
+	//         float:left;
+	//         background: blue;
+	//         height: 500px;
+	//     }
+	// </style>
+	// <script>
+	exports.default = {
+	    props: {
+	        msg: String
+	    },
+	    methods: {
+	        fn: function fn() {
+	            alert(1);
+	        }
+	    }
+	};
+	// </script>
+	/* generated by vue-loader */
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"nav-left\" :click=\"fn\">\n    {{msg}}\n</div>\n";
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(16)
+	__vue_script__ = __webpack_require__(18)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\footer.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(19)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-56d51764/footer.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(17);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./footer.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./footer.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n\n\n\n.footer{\n    height: 100px;;\n    background-color:black;\n}\n", "", {"version":3,"sources":["/./src/components/footer.vue?f4bf4708"],"names":[],"mappings":";;;;AAIA;IACA,cAAA;IACA,uBAAA;CACA","file":"footer.vue","sourcesContent":["<template>\r\n    <div class=\"footer\"></div>\r\n</template>\r\n<style>\r\n    .footer{\r\n        height: 100px;;\r\n        background-color:black;\r\n    }\r\n</style>\r\n<script>\r\n    export default{\r\n\r\n    }\r\n</script>"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//     <div class="footer"></div>
+	// </template>
+	// <style>
+	//     .footer{
+	//         height: 100px;;
+	//         background-color:black;
+	//     }
+	// </style>
+	// <script>
+	exports.default = {};
+	// </script>
+	/* generated by vue-loader */
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"footer\"></div>\n";
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(21);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(23)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./template.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./template.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "html,body{\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n.c-content{\r\n    height: 500px;\r\n    width: 100%;\r\n    background: url(" + __webpack_require__(22) + ");\r\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "../image/001.png?5c38ec4";
+
+/***/ },
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

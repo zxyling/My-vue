@@ -1,5 +1,7 @@
 <template>
-   <div class="nav-left"></div>
+   <div class="nav-left" :click="fn">
+       {{msg}}
+   </div>
 </template>
 <style>
     .nav-left{
@@ -11,6 +13,13 @@
 </style>
 <script>
     export default{
-
+        props:{
+            msg:String
+        },
+        methods:{
+            fn:function(){
+                alert(1);
+            }
+        }
     }
 </script>
