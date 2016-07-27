@@ -128,7 +128,7 @@ gulp.task('watch',function(){
     gulp.watch('src/pages/**/*.html',['copyhtml']);
     gulp.watch('src/image/**/*.{jpg,png,gif,ico}',['images']);
     gulp.watch('src/common/**/*.{jpg,png,gif,ico}',['commonImage']);
-    gulp.watch('src/css/*.css',['pagesCss','bundle']);
+    gulp.watch('src/css/*.css',['bundle']);
     gulp.watch('src/common/*.css',['commonCss','bundle']);
     gulp.watch('src/js/**/*.js',['bundle']);
     gulp.watch('src/lib/**/*.js',['libJs']);

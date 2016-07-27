@@ -6,18 +6,7 @@
     <link rel="stylesheet" href="//g.alicdn.com/sui/sui3/0.0.18/css/sui.css">
 </head>
 <body>
-<h1>Hello App!</h1>
-<div id="app">
-    <h1>Hello App!</h1>
-    <p>
-        <!-- 使用指令 v-link 进行导航。 -->
-        <a v-link="{ path: '/foo' }">Go to Foo</a>
-        <a v-link="{ path: '/bar' }">Go to Bar</a>
-    </p>
-    <!-- 路由外链 -->
-    <router-view></router-view>
-</div>
-<div class="box"></div>
+<myheader :message="msg"></myheader>
 </body>
 </html>
 <script type="text/javascript" src="//g.alicdn.com/sj/lib/jquery/dist/jquery.js"></script>

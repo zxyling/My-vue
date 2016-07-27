@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-
+        <img  :src="msg" alt="">
     </div>
 </template>
 <style>
@@ -13,7 +13,7 @@
     export default{
         data(){
             return{
-                msg:'hello vue'
+                msg:'../../image/common/001.png'
             }
         }
     }
