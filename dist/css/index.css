@@ -1,0 +1,14 @@
+.fade-transition {
+    transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave {
+    opacity: 0;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.c-content{
+    height: 500px;
+    width: 100%;
+}

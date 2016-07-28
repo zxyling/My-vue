@@ -58,18 +58,18 @@ gulp.task('commonCss',function(){
  * 线上环境 - 公用图片
  * @param 压缩公用代码合并至新目录
  * */
-//gulp.task('commonImage',function(){
-//    return gulp.src('src/common/image/**/*.{jpg,png,gif}')
-//        .pipe(imagecache(imagemin({             //只压缩修改的图片
-//            optimizationLevel: 7,               //类型：Number  默认：3  取值范围：0-7（优化等级）
-//            progressive: true,                  //类型：Boolean 默认：false 无损压缩jpg图片
-//            interlaced: true,                   //类型：Boolean 默认：false 隔行扫描gif进行渲染
-//            multipass: true,                    //类型：Boolean 默认：false 多次优化svg直到完全优化
-//            use: [pngquant()]                   //使用pngquant深度压缩png图片的imagemin插件
-//        })))
-//        .pipe(gulp.dest('dist/common/image'))
-//        .pipe(connect.reload());
-//});
+gulp.task('commonImage',function(){
+    return gulp.src('src/common/image/**/*.{jpg,png,gif}')
+        .pipe(imagecache(imagemin({             //只压缩修改的图片
+            optimizationLevel: 7,               //类型：Number  默认：3  取值范围：0-7（优化等级）
+            progressive: true,                  //类型：Boolean 默认：false 无损压缩jpg图片
+            interlaced: true,                   //类型：Boolean 默认：false 隔行扫描gif进行渲染
+            multipass: true,                    //类型：Boolean 默认：false 多次优化svg直到完全优化
+            use: [pngquant()]                   //使用pngquant深度压缩png图片的imagemin插件
+        })))
+        .pipe(gulp.dest('dist/common/image'))
+        .pipe(connect.reload());
+});
 /*
  * 线上环境 - css
  * @param 压缩pages目录下的所有css文件
@@ -126,7 +126,7 @@ gulp.task('clean',function(){
 //监视文件变化，并执行任务
 gulp.task('watch',function(){
     gulp.watch('src/pages/**/*.html',['copyhtml']);
-    gulp.watch('src/image/**/*.{jpg,png,gif,ico}',['images']);
+    gulp.watch('/image/**/*.{jpg,png,gif,ico}',['images']);
     gulp.watch('src/common/**/*.{jpg,png,gif,ico}',['commonImage']);
     gulp.watch('src/css/*.css',['bundle']);
     gulp.watch('src/common/*.css',['commonCss','bundle']);

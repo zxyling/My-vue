@@ -10,7 +10,9 @@
     <c-header></c-header>
     <div class="c-content">
         <c-left></c-left>
-        <div class="c-right"></div>
+        <div class="c-right">
+            <component :is="currentView" transition="fade" transition-mode="out-in"></component>
+        </div>
     </div>
     <c-footer></c-footer>
 </div>

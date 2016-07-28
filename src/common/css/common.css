@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* 企业端-通用样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.main-color,a,a:hover,.hw_gt{
+  color: #f39800; }
+body {
+  font-family: "微软雅黑", "Microsoft Yahei"; }
+
+a,a:hover{
+  text-decoration: none; }
+li{
+  list-style: none;
+}
+/*# sourceMappingURL=common.css.map */
